@@ -1,0 +1,113 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+media/
+staticfiles/
+static/
+
+# If using environment variables file
+.env
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Pytest cache
+.pytest_cache/
+
+# VSCode
+.vscode/
+
+# MacOS
+.DS_Store
+
+# PyCharm
+.idea/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# celerybeat schedule file
+celerybeat-schedule
+
+# coverage reports
+.coverage
+htmlcov/
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Pyre type checker
+.pyre/
+
+# pipenv
+Pipfile.lock
+
+# pytest
+.pytest_cache/
+
+# tox
+.tox/
+
+# profiling data
+.prof
+
+# virtualenv
+.env/
+venv/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# IPython history
+.ipython/
+
+# mypy
+.mypy_cache/
+
+# celery
+celerybeat-schedule
+
+# django stuff you might want to ignore
+*.sqlite3
+*.log
+staticfiles/
+media/
+
+# Other files to ignore
+*.pem
