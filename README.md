@@ -13,32 +13,41 @@ Frontend: React + Tailwind CSS
 Database: SQLite (default, can be switched to PostgreSQL or others)
 
 ## Features
-Real-time machine status: Available or In Use
+* Real-time machine status: Available or In Use
 
-Auto-tracks duration of usage when a machine is in use
+* Auto-tracks duration of usage when a machine is in use
 
-Simple and responsive admin dashboard
+* Simple and responsive admin dashboard
 
-Easily update machine status from the UI
+* Easily update machine status from the UI
 
 ## Installation
 ** Backend (Django)
-bash
+--bash--
 Copy code
+
 cd backend
+
 python -m venv env
+
 source env/bin/activate  # or .\env\Scripts\activate on Windows
+
 pip install -r requirements.txt
+
 python manage.py migrate
 python manage.py runserver
 
 ** Frontend (React)
-bash
+--bash--
 Copy code
+
 cd frontend
+
 npm install
+
 npm run dev  # or npm start if using CRA
-🛠️ Usage
+
+## Usage
 Start the backend and frontend servers.
 
 Visit the frontend interface.
