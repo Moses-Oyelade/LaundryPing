@@ -46,5 +46,5 @@ Visit the frontend interface.
 Create machines, update their status, and track their usage time in minutes.
 
 ## License
-This project is open-source and available under the MIT License.
+This project is open-source and available under the MIT License – see the [LICENSE](./LICENSE) file for details.
 
