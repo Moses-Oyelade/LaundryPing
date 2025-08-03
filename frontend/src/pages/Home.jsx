@@ -21,10 +21,10 @@ const Home = () => {
         <h1 className="text-2xl font-bold mb-4 text-center">Active Machines</h1>
         <ActivateMachines />
       </main>
-      <div className="mt-4 text-center">
+      <div className="mt-4 mx-6 text-center">
         <AudioToggleButton />
         <a href='/machines'>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded">
+          <button className="bg-blue-600 text-white ml-4 px-4 py-2 rounded">
             Acitvate / Add Machine
           </button>
         </a>
