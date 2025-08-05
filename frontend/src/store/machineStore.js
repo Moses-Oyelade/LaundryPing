@@ -4,7 +4,8 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useSoundStore } from './soundStore';
 
-const BASE_URL = 'http://localhost:8000';
+// const BASE_URL = 'http://localhost:8000';
+const BASE_URL = 'https://laundryping.onrender.com'
 
 export const useMachineStore = create((set, get) => {
   let alarmPlayed = {};
