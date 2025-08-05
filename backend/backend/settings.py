@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ip00dlidr(k^stv-*+3qt2g-=06nd5($ice=fnx3tpf58-80g&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['laundryping.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','laundryping.onrender.com']
 
 
 # Application definition
