@@ -20,7 +20,7 @@ const Home = () => {
       <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4 text-center">
         <AudioToggleButton />
         <a href="/machines">
-          <button className="bg-blue-600 text-white px-4 py-2 rounded w-full sm:w-auto">
+          <button className="bg-blue-600 text-white px-4 py-2 rounded w-full sm:w-20">
             Activate / Add Machine
           </button>
         </a>
