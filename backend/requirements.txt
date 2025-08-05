@@ -63,14 +63,13 @@ matplotlib-inline==0.1.6
 mistune==3.0.2
 numpy==1.26.2
 packaging==23.2
-pandas==2.1.4
+pandas==1.5.3
 parso==0.8.3
 pickleshare==0.7.5
 pipenv==2023.10.20
 platformdirs==3.10.0
 pluggy==1.3.0
 prompt-toolkit==3.0.39
-psycopg==3.1.18
 psycopg2-binary==2.9.9
 pure-eval==0.2.2
 pydantic==2.10.6
@@ -87,8 +86,8 @@ readchar==4.0.5
 referencing==0.32.0
 requests==2.31.0
 rpds-py==0.15.2
-scikit-learn==1.6.1
-scipy==1.15.1
+scikit-learn==1.3.2
+scipy==1.10.1
 six==1.16.0
 sniffio==1.3.1
 soupsieve==2.5
