@@ -8,6 +8,7 @@ const formatTime = (secs) => {
   return `${m}:${s}`;
 };
 
+// ... imports unchanged
 export default function ActivateMachine() {
   const {
     machines,
@@ -18,58 +19,37 @@ export default function ActivateMachine() {
     updateTimers,
   } = useMachineStore();
 
-  const { enableAudio,
-        // playAlarm,
-        // isAudioEnabled,
-    } = useSoundStore();
+  const { enableAudio } = useSoundStore();
+  const [loading, setLoading] = useState(true);
 
-  const [loading, setLoading] = useState(true)
-
-  // Fetch fresh machine data when this page mounts
   useEffect(() => {
     fetchMachines();
-
-  }, [fetchMachines,]);
-
-  useEffect(() => {
-  enableAudio(); // optional, or use a button
-  // playAlarm()
-}, [enableAudio]);
-
+  }, [fetchMachines]);
 
   useEffect(() => {
-    updateTimers();   
-    startTimerInterval();   
+    enableAudio();
+  }, [enableAudio]);
+
+  useEffect(() => {
+    updateTimers();
+    startTimerInterval();
     setLoading(false);
   }, [updateTimers, startTimerInterval]);
 
   const handleStop = async (machineId) => {
-    await toggleInUse(machineId); // This should flip `in_use` and update backend
-    updateTimers();               // Clean up local timer display
+    await toggleInUse(machineId);
+    updateTimers();
   };
-  // const handleToggleAudio = () => {
-  //   if (isAudioEnabled) {
-  //     disableAudio();
-  //   } else {
-  //     enableAudio();
-  //   }
-  // };
 
   if (loading) return <div className="p-4 text-center">Loading machines...</div>;
 
   return (
-    <div className="p-4 max-w-4xl mx-auto">
-      <div className="flex justify-between items-center mb-4">
+    <div className="p-4">
+      <div className="flex flex-col sm:flex-row justify-between items-center mb-4">
         <h2 className="text-2xl font-bold">Machines In Use</h2>
-        {/* <button
-          onClick={handleToggleAudio}
-          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
-        >
-          {isAudioEnabled ? '🔇 Mute Alarm' : '🔊 Unmute Alarm'}
-        </button> */}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {machines
           .filter((m) => m.in_use)
           .map((machine) => (
@@ -87,7 +67,7 @@ export default function ActivateMachine() {
 
               <button
                 onClick={() => handleStop(machine.id)}
-                className="mt-2 px-3 py-1 bg-yellow-500 hover:bg-yellow-600 text-white rounded"
+                className="mt-2 px-3 py-1 w-full bg-yellow-500 hover:bg-yellow-600 text-white rounded"
               >
                 Stop
               </button>
@@ -97,3 +77,4 @@ export default function ActivateMachine() {
     </div>
   );
 }
+

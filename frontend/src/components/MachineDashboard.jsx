@@ -4,6 +4,7 @@ import { useMachineStore } from '../store/machineStore';
 import StartTimerButton from './StartTimerButton';
 
 
+// ... imports unchanged
 export default function MachineDashboard() {
   const {
     machines,
@@ -22,9 +23,7 @@ export default function MachineDashboard() {
   useEffect(() => {
     startTimerInterval();
     startMachinePolling();
-  }, [startTimerInterval, startMachinePolling]); 
-
-
+  }, [startTimerInterval, startMachinePolling]);
 
   const handleAdd = () => {
     if (newName.trim()) addMachine(newName).then(() => setNewName(''));
@@ -37,9 +36,9 @@ export default function MachineDashboard() {
 
   return (
     <div className="p-4 max-w-3xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">LaundryPing Dashboard</h1>
+      <h1 className="text-2xl font-bold mb-4 text-center">LaundryPing Dashboard</h1>
 
-      <div className="flex gap-2 mb-4">
+      <div className="flex flex-col sm:flex-row gap-2 mb-4">
         <input
           value={newName}
           onChange={(e) => setNewName(e.target.value)}
@@ -51,9 +50,9 @@ export default function MachineDashboard() {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {machines.map(machine => (
-          <div key={machine.id} className="border rounded p-4 flex justify-between items-center bg-white shadow">
+          <div key={machine.id} className="border rounded p-4 flex flex-col justify-between bg-white shadow">
             <div>
               <h2 className="font-semibold text-lg">{machine.name}</h2>
               <p>Status: <span className={`font-bold ${machine.status === 'in_use' ? 'text-red-500' : 'text-green-600'}`}>
@@ -62,34 +61,26 @@ export default function MachineDashboard() {
               {timers[machine.id] > 0 && (
                 <p>⏱ {timers[machine.id]}s left</p>
               )}
-              <div className="flex items-center gap-2 mt-2">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 mt-2">
                 <input
                   type="number"
                   placeholder="Timer (s)"
                   value={durations[machine.id] || ''}
                   onChange={(e) => setDurations({ ...durations, [machine.id]: e.target.value })}
-                  className="border px-2 py-1 rounded w-24"
+                  className="border px-2 py-1 rounded w-full sm:w-24"
                 />
-                < StartTimerButton machineId={machine.id} startTimer={handleStartTimer} />
+                <StartTimerButton machineId={machine.id} startTimer={handleStartTimer} />
                 <button
                   onClick={() => toggleInUse(machine.id)}
-                  className={timers[machine.id] > 0 ? (
-                    "bg-red-600 text-white px-2 py-1 rounded"
-                  ) : (
-                    "bg-purple-500 text-white px-2 py-1 rounded"
-                  )}
+                  className={`text-white px-2 py-1 rounded w-full sm:w-auto ${timers[machine.id] > 0 ? "bg-red-600" : "bg-purple-500"}`}
                 >
-                  {timers[machine.id] > 0 ? (
-                    "Stop"
-                  ) : (
-                    "Toggle In Use"
-                  )}
+                  {timers[machine.id] > 0 ? "Stop" : "Toggle In Use"}
                 </button>
               </div>
             </div>
             <button
               onClick={() => deleteMachine(machine.id)}
-              className="text-red-500 hover:underline"
+              className="text-red-500 hover:bg-red-600 hover:rounded hover:p-2 hover:text-white mt-2 sm:mt-0 self-end"
             >
               Delete
             </button>
