@@ -1,6 +1,7 @@
 ## LaundryPing
 Date, 2025/07/27
 By Moses O. Oyelade
+(@Muzak2025)
 
 ## Description
 LaundryPing is a simple yet effective web application that helps users track the status of laundry machines (e.g., available or in use) in real time. It also utilizes an alarm system for notification at the end of a pre-set countdown. It is designed to help facilities like dormitories or shared housing units reduce wait times and improve machine usage.
