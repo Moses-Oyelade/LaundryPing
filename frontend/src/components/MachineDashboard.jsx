@@ -136,6 +136,12 @@ export default function MachineDashboard() {
           </div>
         ))}
       </div>
+      <button
+          onClick={handleAdd}
+          className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md transition w-12 sm:w-auto"
+        >
+          Done
+        </button>
     </div>
   );
 }

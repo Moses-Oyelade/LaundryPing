@@ -12,6 +12,7 @@ const Home = () => {
 
   return (
     <div className="w-full min-h-screen max-w-5xl mx-auto px-4 py-6">
+      <h1 className="text-3xl font-extrabold mb-6 text-center text-blue-700">🧺 LaundryPing Dashboard</h1>
       <main className="bg-gray-100 rounded p-4 shadow">
         <h1 className="text-2xl font-bold mb-4 text-center">Active Machines</h1>
         <ActivateMachines />
